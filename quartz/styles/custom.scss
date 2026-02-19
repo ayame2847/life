@@ -1,3 +1,45 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+[aria-reveal='dark'] body {
+    -webkit-font-smoothing: antialiased;
+    font-weight: 450; // 稍微加粗，增加暗光下的可读性
+  }
+
+// 让高亮边缘稍微圆润一点，更像手绘
+mark {
+    background-color: var(--textHighlight);
+    border-radius: 4px;
+    padding: 0 4px;
+  }
+
+// 仅在深色模式下触发星辰效果
+[data-theme='dark'] {
+    .graph-view-container {
+      // 1. 节点发光效果
+      circle {
+        fill: #fff !important; // 让节点核心变为纯白，像恒星核心
+        filter: drop-shadow(0 0 4px var(--secondary)) 
+                drop-shadow(0 0 8px var(--tertiary));
+        transition: filter 0.3s ease;
+  
+        &:hover {
+          filter: drop-shadow(0 0 6px #fff) 
+                  drop-shadow(0 0 12px var(--secondary));
+        }
+      }
+  
+      // 2. 连线弱化，模拟引力线
+      line {
+        stroke-opacity: 0.15;
+        stroke-width: 0.5px;
+        stroke: var(--tertiary) !important;
+      }
+  
+      // 3. 选中的节点和连线加亮
+      .highlight {
+        stroke-opacity: 0.8;
+        stroke: #fff !important;
+      }
+    }
+  }

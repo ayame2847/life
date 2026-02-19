@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "ATAME",
+    pageTitle: "AYAME",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -23,32 +23,34 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "EB Garamond",
-        body: "Source Sans Pro",
+        header: "Playfair Display", 
+        // 正文使用经典的 EB Garamond，体现手稿感
+        body: "EB Garamond",        
         code: "IBM Plex Mono",
       },
       colors: {
         lightMode: {
-          light: "#f4ecd8", // 匹配你星系的底色
-          secondary: "#284b63", // 链接颜色
-          tertiary: "#84a59d", // 强调色
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          light: "#f4ecd8",         // 核心：羊皮纸底色，匹配星系
+          lightgray: "#dcd0b9",    // 边框色，稍微加深以体现纸张叠层感
+          gray: "#a69d8a",         // 次要文字颜色
+          darkgray: "#433422",     // 正文颜色，改用深棕色替代纯黑，更柔和
+          dark: "#2b2b2b",         
+          secondary: "#b85c38",    // 链接颜色：铁锈红/古墨色，更有学术感
+          tertiary: "#5a7d7c",     // 强调色：古雅的灰绿色
+          highlight: "rgba(184, 92, 56, 0.1)", // 选中文本的背景色
           textHighlight: "#fff23688",
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          // 星空色（更高亮、分层更明显）
+          light: "#0b1020", // 主背景：深靛蓝夜空
+          lightgray: "#141b33", // 分层底色：更亮一档的夜空层
+          gray: "#6b7aa6", // 次要文字/图标：偏冷的星雾蓝灰
+          darkgray: "#c8d2ff", // 正文：高对比、偏冷的月光白
+          dark: "#f3f6ff", // 标题/核心文字：更亮的星光白
+          secondary: "#7aa2ff", // 强调/链接：电光蓝
+          tertiary: "#c38cff", // 次强调：星云紫
+          highlight: "rgba(122, 162, 255, 0.16)", // 选中文本底色：蓝光晕
+          textHighlight: "#b4a7ff88", // mark 高亮：淡紫荧光
         },
       },
     },
