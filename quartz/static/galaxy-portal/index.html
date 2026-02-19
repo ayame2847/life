@@ -51,7 +51,8 @@
           e.preventDefault();
           // 强制导航到根目录下的正确位置
           const targetPath = url.pathname.split('/').pop();
-          window.location.href = window.location.origin + '/' + targetPath;
+          // 核心：强制加入 /life/ 前缀，对齐 GitHub 仓库的真实路径
+          window.location.href = window.location.origin + '/life/' + targetPath;
         }
       }
     }, true);
